@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26122823-3238-47b5-a930-ab9dfe4eae26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SlimAuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SlimAuth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +79,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580512472216</updated>
-      <workItem from="1580512475203" duration="1811000" />
+      <workItem from="1580512475203" duration="2547000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1081" y="303" key="NewPhpClassDialog" timestamp="1580567270282">
+      <screen x="0" y="23" width="1680" height="941" />
+    </state>
+    <state x="1081" y="303" key="NewPhpClassDialog/0.23.1680.941@0.23.1680.941" timestamp="1580567270282" />
+    <state x="1204" y="410" key="NewPhpFileDialog" timestamp="1580567265365">
+      <screen x="0" y="23" width="1680" height="941" />
+    </state>
+    <state x="1204" y="410" key="NewPhpFileDialog/0.23.1680.941@0.23.1680.941" timestamp="1580567265365" />
   </component>
 </project>
