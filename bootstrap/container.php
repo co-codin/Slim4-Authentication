@@ -1,5 +1,7 @@
 <?php
 
-$container->add('greeting', function () {
-   return 'hi';
-});
+$container->addServiceProvider(
+    new \App\Providers\ViewServiceProvider(
+        $app->getRouteCollector()->getRouteParser()
+    )
+);

@@ -11,8 +11,6 @@ AppFactory::setContainer($container);
 
 $app = AppFactory::create();
 
-$container->addServiceProvider(new \App\Providers\ViewServiceProvider());
-
 require_once __DIR__ . '/container.php';
 
 require_once __DIR__ . '/../routes/web.php';
