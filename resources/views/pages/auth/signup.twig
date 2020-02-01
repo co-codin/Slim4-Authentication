@@ -1,0 +1,77 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-centered">
+                    Sign up
+                </h3>
+
+                {% include 'components/status.twig' %}
+                
+                <form action="{{ url_for('auth.signup') }}" method="post">
+                    {{ csrf() | raw }}
+                    
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input class="input{{ errors.email ? ' is-danger' : '' }}" type="text" name="email" placeholder="e.g alex@codecourse.com" value="{{ old.email }}">
+                        </div>
+
+                        {% if errors.email %}
+                            <p class="help is-danger">
+                                {{ errors.email | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <div class="field">
+                        <label class="label">First name</label>
+                        <div class="control">
+                            <input class="input{{ errors.first_name ? ' is-danger' : '' }}" type="text" name="first_name" placeholder="e.g Alex" value="{{ old.first_name }}">
+                        </div>
+
+                        {% if errors.first_name %}
+                            <p class="help is-danger">
+                                {{ errors.first_name | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Last name</label>
+                        <div class="control">
+                            <input class="input{{ errors.last_name ? ' is-danger' : '' }}" type="text" name="last_name" placeholder="e.g Garrett-Smith" value="{{ old.last_name }}">
+                        </div>
+
+                        {% if errors.last_name %}
+                            <p class="help is-danger">
+                                {{ errors.last_name | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input{{ errors.password ? ' is-danger' : '' }}" type="password" name="password">
+                        </div>
+
+                        {% if errors.password %}
+                            <p class="help is-danger">
+                                {{ errors.password | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+
+                    <div class="control">
+                        <button type="submit" class="button is-info">
+                            Sign up
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

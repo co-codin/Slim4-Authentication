@@ -1,0 +1,62 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-centered">
+                    Sign in
+                </h3>
+
+                {% include 'components/status.twig' %}
+                
+                <form action="{{ url_for('auth.signin') }}" method="post">
+                    {{ csrf() | raw }}
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input class="input{{ errors.email ? ' is-danger' : '' }}" type="text" name="email" placeholder="e.g alex@codecourse.com">
+                        </div>
+
+                        {% if errors.email %}
+                            <p class="help is-danger">
+                                {{ errors.email | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input{{ errors.password ? ' is-danger' : '' }}" type="password" name="password">
+                        </div>
+
+                        {% if errors.password %}
+                            <p class="help is-danger">
+                                {{ errors.password | first }}
+                            </p>
+                        {% endif %}
+                    </div>
+    
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox" name="persist">
+                                Keep me signed in
+                            </label>
+                        </div>
+                    </div>
+    
+                    <div class="control">
+                        <button type="submit" class="button is-info">
+                            Sign in
+                        </button>
+                    </div>
+
+                    <input type="hidden" name="redirect" value="{{ redirect }}">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
