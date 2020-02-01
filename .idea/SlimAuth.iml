@@ -5,23 +5,39 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/sentinel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fig/http-message-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/database" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/events" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/fast-route" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-server-handler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-server-middleware" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/csrf" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/flash" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/slim" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/twig-view" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/mime" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
     </content>
     <orderEntry type="inheritedJdk" />
