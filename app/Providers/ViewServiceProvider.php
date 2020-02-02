@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 use Slim\Interfaces\RouteParserInterface;
 use Slim\Psr7\Factory\UriFactory;
@@ -38,9 +39,18 @@ class ViewServiceProvider extends AbstractServiceProvider
                 )
             );
 
+            $this->registerGlobals($twig);
+
             $twig->addExtension(new TwigExtension());
 
             return $twig;
         });
+    }
+
+    protected function registerGlobals(Twig $twig)
+    {
+        $container = $this->getContainer();
+
+        $twig->getEnvironment()->addGlobal('user', Sentinel::check());
     }
 }
