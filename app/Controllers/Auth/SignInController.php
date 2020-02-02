@@ -3,6 +3,7 @@
 namespace App\Controllers\Auth;
 
 use Slim\Views\Twig;
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 
 class SignInController
 {
@@ -22,6 +23,10 @@ class SignInController
     {
         $data = $request->getParsedBody();
 
-        
+        if (!$user = Sentinel::authenticate($data)) {
+            die('Incorrect');
+        }
+
+        return $response;
     }
 }
