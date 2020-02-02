@@ -52,5 +52,7 @@ class ViewServiceProvider extends AbstractServiceProvider
         $container = $this->getContainer();
 
         $twig->getEnvironment()->addGlobal('user', Sentinel::check());
+
+        $twig->getEnvironment()->addGlobal('status', $container->get('flash')->getFirstMessage('status'));
     }
 }

@@ -10,13 +10,15 @@ $container->add(HomeController::class, function () use ($container) {
     );
 });
 
-$container->add(SignInController::class, function () use ($container) {
+$container->add(SignInController::class, function () use ($app, $container) {
     return new SignInController(
-        $container->get('view')
+        $container->get('view'),
+        $container->get('flash'),
+        $app->getRouteCollector()->getRouteParser()
     );
 });
 
-$container->add(SignOutController::class, function () use ($container) {
+$container->add(SignOutController::class, function () use ($app) {
     return new SignOutController(
         $app->getRouteCollector()->getRouteParser()
     );
