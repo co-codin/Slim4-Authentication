@@ -31,8 +31,12 @@ class SignInController
     {
         $data = $request->getParsedBody();
 
-        if (!$user = Sentinel::authenticate($data)) {
-            $this->flash->addMessage('status', 'Could not sign you in.');
+        try {
+            if (!$user = Sentinel::authenticate($data)) {
+                throw new \Exception('Incorrect email or password');
+            }
+        } catch (\Exception $e) {
+            $this->flash->addMessage('status', $e->getMessage());
 
             return $response->withHeader(
                 'Location', $this->routeParser->urlFor('auth.signin')
