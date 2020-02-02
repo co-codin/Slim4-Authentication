@@ -17,4 +17,9 @@ class SignInController
     {
         return $this->view->render($response, 'pages/auth/signin.twig');
     }
+
+    public function action($request, $response)
+    {
+        die('works');
+    }
 }

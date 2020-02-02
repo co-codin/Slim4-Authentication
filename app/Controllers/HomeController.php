@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Views\Twig;
