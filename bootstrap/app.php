@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use Slim\Factory\AppFactory;
 use League\Container\Container;
 

@@ -5,3 +5,9 @@ $container->addServiceProvider(
         $app->getRouteCollector()->getRouteParser()
     )
 );
+
+$container->addServiceProvider(
+    new \App\Providers\FlashServiceProvider(
+
+    )
+);
