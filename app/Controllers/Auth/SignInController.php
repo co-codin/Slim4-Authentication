@@ -2,12 +2,15 @@
 
 namespace App\Controllers\Auth;
 
+use App\Controllers\Controller;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Slim\Flash\Messages;
 use Slim\Interfaces\RouteParserInterface;
 use Slim\Views\Twig;
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
 
-class SignInController
+class SignInController extends Controller
 {
     protected $view;
 
@@ -22,14 +25,17 @@ class SignInController
         $this->routeParser = $routeParser;
     }
 
-    public function index($request, $response)
+    public function index(ServerRequestInterface $request, ResponseInterface $response)
     {
         return $this->view->render($response, 'pages/auth/signin.twig');
     }
 
-    public function action($request, $response)
+    public function action(ServerRequestInterface $request, ResponseInterface $response)
     {
-        $data = $request->getParsedBody();
+        $data = $this->validate($request, [
+            'email' => ['email', 'required'],
+            'password' => ['required']
+        ]);
 
         try {
             if (!$user = Sentinel::authenticate($data)) {
