@@ -20,6 +20,8 @@ class SignInController
 
     public function action($request, $response)
     {
-        die('works');
+        $data = $request->getParsedBody();
+
+        
     }
 }
