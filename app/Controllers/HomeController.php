@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
