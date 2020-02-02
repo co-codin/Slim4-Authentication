@@ -1,5 +1,3 @@
 <?php
 
-$app->get('/', function ($request, $response, $args) use ($container) {
-    return $response;
-});
+$app->get('/', \App\Controllers\HomeController::class);

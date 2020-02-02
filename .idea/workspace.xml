@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26122823-3238-47b5-a930-ab9dfe4eae26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bootstrap/controllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/menu.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.twig" afterDir="false" />
@@ -103,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580512472216</updated>
-      <workItem from="1580512475203" duration="5604000" />
+      <workItem from="1580512475203" duration="7015000" />
     </task>
     <servers />
   </component>
@@ -111,10 +112,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1081" y="303" key="NewPhpClassDialog" timestamp="1580567270282">
+    <state x="1072" y="290" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580593960151">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
-    <state x="1081" y="303" key="NewPhpClassDialog/0.23.1680.941@0.23.1680.941" timestamp="1580567270282" />
+    <state x="1072" y="290" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.941@0.23.1680.941" timestamp="1580593960151" />
+    <state x="1067" y="303" key="NewPhpClassDialog" timestamp="1580593968578">
+      <screen x="0" y="23" width="1680" height="941" />
+    </state>
+    <state x="1067" y="303" key="NewPhpClassDialog/0.23.1680.941@0.23.1680.941" timestamp="1580593968578" />
     <state x="1204" y="410" key="NewPhpFileDialog" timestamp="1580567265365">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
@@ -123,9 +128,9 @@
       <screen x="0" y="23" width="1680" height="941" />
     </state>
     <state x="1205" y="404" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.941@0.23.1680.941" timestamp="1580574284415" />
-    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup" timestamp="1580593481692">
+    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup" timestamp="1580641152511">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
-    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup/0.23.1680.941@0.23.1680.941" timestamp="1580593481692" />
+    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup/0.23.1680.941@0.23.1680.941" timestamp="1580641152511" />
   </component>
 </project>

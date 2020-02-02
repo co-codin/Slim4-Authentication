@@ -1,6 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold" href="{{ url_for('home') }}">
+        <a class="navbar-item has-text-weight-bold" href="">
             Slim auth
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -11,7 +11,7 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="{{ url_for('home') }}">
+            <a class="navbar-item" href="">
                 Home
             </a>
         </div>
@@ -22,13 +22,13 @@
                         {{ user.fullName() }}
                     </a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="{{ url_for('account') }}">
+                        <a class="navbar-item" href="">
                             Account
                         </a>
-                        <a class="navbar-item" href="{{ url_for('account.password') }}">
+                        <a class="navbar-item" href="">
                             Change password
                         </a>
-                        <a class="navbar-item" href="{{ url_for('dashboard') }}">
+                        <a class="navbar-item" href="">
                             Dashboard
                         </a>
                         <a href="#" class="navbar-item" onclick="document.getElementById('signout').submit(); return false;">
@@ -39,10 +39,10 @@
             {% else %}
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-info" href="{{ url_for('auth.signup') }}">
+                        <a class="button is-info" href="">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light" href="{{ url_for('auth.signin') }}">
+                        <a class="button is-light" href="">
                             Sign in
                         </a>
                     </div>
@@ -52,6 +52,6 @@
     </div>
 </nav>
 
-<form action="{{ url_for('auth.signout') }}" method="post" id="signout">
+<form action="" method="post" id="signout">
 {#    {{ csrf() | raw }}#}
 </form>
