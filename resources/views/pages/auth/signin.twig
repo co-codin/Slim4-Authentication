@@ -10,8 +10,8 @@
 
                 {% include 'components/status.twig' %}
                 
-                <form action="{{ url_for('auth.signin') }}" method="post">
-                    {{ csrf() | raw }}
+                <form action="" method="post">
+{#                    {{ csrf() | raw }}#}
 
                     <div class="field">
                         <label class="label">Email</label>
