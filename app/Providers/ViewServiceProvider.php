@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Views\CsrfExtension;
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 use Slim\Interfaces\RouteParserInterface;
@@ -42,6 +43,7 @@ class ViewServiceProvider extends AbstractServiceProvider
             $this->registerGlobals($twig);
 
             $twig->addExtension(new TwigExtension());
+            $twig->addExtension(new CsrfExtension());
 
             return $twig;
         });
