@@ -43,7 +43,7 @@ class ViewServiceProvider extends AbstractServiceProvider
             $this->registerGlobals($twig);
 
             $twig->addExtension(new TwigExtension());
-            $twig->addExtension(new CsrfExtension());
+            $twig->addExtension(new CsrfExtension($container->get('csrf')));
 
             return $twig;
         });
