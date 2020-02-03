@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Middleware\RedirectIfGuest;
 use League\Container\ServiceProvider\AbstractServiceProvider;
+use Slim\Interfaces\RouteParserInterface;
 
 class MiddlewareServiceProvider extends AbstractServiceProvider
 {
@@ -11,12 +12,22 @@ class MiddlewareServiceProvider extends AbstractServiceProvider
         RedirectIfGuest::class
     ];
 
+    protected $routeParser;
+
+    public function __construct(RouteParserInterface $routeParser)
+    {
+        $this->routeParser = $routeParser;
+    }
+
     public function register()
     {
         $container = $this->getContainer();
 
-        $container->add(RedirectIfGuest::class, function () {
-            return new RedirectIfGuest();
+        $container->add(RedirectIfGuest::class, function () use ($container) {
+            return new RedirectIfGuest(
+                $container->get('flash'),
+                $this->routeParser
+            );
         });
     }
 }

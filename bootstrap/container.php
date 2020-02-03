@@ -1,7 +1,9 @@
 <?php
 
 $container->addServiceProvider(
-    new \App\Providers\MiddlewareServiceProvider()
+    new \App\Providers\MiddlewareServiceProvider(
+        $app->getRouteCollector()->getRouteParser()
+    )
 );
 
 $container->addServiceProvider(
