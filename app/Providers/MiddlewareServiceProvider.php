@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Middleware\RedirectIfAuthenticated;
 use App\Middleware\RedirectIfGuest;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 use Slim\Interfaces\RouteParserInterface;
@@ -28,6 +29,10 @@ class MiddlewareServiceProvider extends AbstractServiceProvider
                 $container->get('flash'),
                 $this->routeParser
             );
+        });
+
+        $container->add(RedirectIfAuthenticated::class, function () use ($container) {
+            return new RedirectIfAuthenticated();
         });
     }
 }
