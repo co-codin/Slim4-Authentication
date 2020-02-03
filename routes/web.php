@@ -9,14 +9,16 @@ use App\Middleware\RedirectIfAuthenticated;
 
 $app->get('/', HomeController::class)->setName('home');
 
-$app->get('/auth/signin', SignInController::class . ":index")
-    ->setName('auth.signin')
-    ->add(RedirectIfAuthenticated::class);
+$app->group('/auth', function ($route) {
+    $route->group('', function ($route) {
+        $route->get('/signin', SignInController::class . ":index")
+            ->setName('auth.signin');
 
-$app->post('/auth/signin', SignInController::class . ":action")
-    ->add(RedirectIfAuthenticated::class);
+        $route->post('/signin', SignInController::class . ":action");
+    })->add(RedirectIfAuthenticated::class);
 
-$app->get('/auth/signout', SignOutController::class)->setName('auth.signout');
+    $route->get('/signout', SignOutController::class)->setName('auth.signout');
+});
 
 $app->get('/dashboard', DashboardController::class)
     ->setName('dashboard')
