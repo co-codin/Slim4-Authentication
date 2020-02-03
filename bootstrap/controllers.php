@@ -3,9 +3,16 @@
 use App\Controllers\HomeController;
 use App\Controllers\Auth\SignInController;
 use App\Controllers\Auth\SignOutController;
+use App\Controllers\Dashboard\DashboardController;
 
 $container->add(HomeController::class, function () use ($container) {
     return new HomeController(
+        $container->get('view')
+    );
+});
+
+$container->add(DashboardController::class, function () use ($container) {
+    return new DashboardController(
         $container->get('view')
     );
 });
@@ -23,3 +30,4 @@ $container->add(SignOutController::class, function () use ($app) {
         $app->getRouteCollector()->getRouteParser()
     );
 });
+
