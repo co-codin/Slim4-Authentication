@@ -19,7 +19,8 @@ class Controller
 
         if (!$validator->validate()) {
             throw new ValidationException(
-                
+                $validator->errors(),
+                $request->getUri()->getPath()
             );
         }
 

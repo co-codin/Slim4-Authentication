@@ -13,9 +13,7 @@ class FlashServiceProvider extends AbstractServiceProvider
 
     public function register()
     {
-        $container = $this->getContainer();
-
-        $container->add('flash', function () {
+        $this->getContainer()->share('flash', function () {
             return new Messages();
         });
     }
