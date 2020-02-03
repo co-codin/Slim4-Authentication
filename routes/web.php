@@ -4,6 +4,7 @@ use App\Controllers\HomeController;
 use App\Controllers\Auth\SignInController;
 use App\Controllers\Auth\SignOutController;
 use App\Controllers\Dashboard\DashboardController;
+use App\Middleware\RedirectIfGuest;
 
 $app->get('/', HomeController::class)->setName('home');
 
@@ -12,4 +13,6 @@ $app->post('/auth/signin', SignInController::class . ":action");
 
 $app->get('/auth/signout', SignOutController::class)->setName('auth.signout');
 
-$app->get('/dashboard', DashboardController::class)->setName('dashboard');
+$app->get('/dashboard', DashboardController::class)
+    ->setName('dashboard')
+    ->add(RedirectIfGuest::class);
