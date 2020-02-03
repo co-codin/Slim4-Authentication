@@ -27,7 +27,9 @@ class SignInController extends Controller
 
     public function index(ServerRequestInterface $request, ResponseInterface $response)
     {
-        return $this->view->render($response, 'pages/auth/signin.twig');
+        return $this->view->render($response, 'pages/auth/signin.twig', [
+            'redirect' => $request->getQueryParams()['redirect'] ?? null
+        ]);
     }
 
     public function action(ServerRequestInterface $request, ResponseInterface $response)
@@ -47,6 +49,10 @@ class SignInController extends Controller
             return $response->withHeader(
                 'Location', $this->routeParser->urlFor('auth.signin')
             );
+        }
+
+        if ($redirect = $data['redirect']) {
+            return $response->withHeader('Location', $redirect);
         }
 
         return $response->withHeader(

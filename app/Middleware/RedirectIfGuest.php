@@ -29,7 +29,9 @@ class RedirectIfGuest
 
             $response = $response->withHeader(
                 'Location',
-                $this->routeParser->urlFor('auth.signin')
+                $this->routeParser->urlFor('auth.signin') .
+                '?' .
+                http_build_query(['redirect' => $request->getUri()->getPath()])
             );
         }
 
