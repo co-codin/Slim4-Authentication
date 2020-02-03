@@ -51,12 +51,8 @@ class SignInController extends Controller
             );
         }
 
-        if ($redirect = $data['redirect']) {
-            return $response->withHeader('Location', $redirect);
-        }
-
         return $response->withHeader(
-          'Location', $this->routeParser->urlFor('home')
+          'Location', $data['redirect'] ? $data['redirect'] : $this->routeParser->urlFor('home')
         );
     }
 }

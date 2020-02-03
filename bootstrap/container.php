@@ -13,5 +13,11 @@ $container->addServiceProvider(
 );
 
 $container->addServiceProvider(
+    new \App\Providers\CsrfServiceProvider(
+        $app->getResponseFactory()
+    )
+);
+
+$container->addServiceProvider(
     new \App\Providers\FlashServiceProvider()
 );

@@ -22,6 +22,7 @@ AppFactory::setContainer($container);
 $app = AppFactory::create();
 
 require_once __DIR__ . '/container.php';
+require_once __DIR__ . '/middleware.php';
 require_once __DIR__ . '/controllers.php';
 require_once __DIR__ . '/exceptions.php';
 
