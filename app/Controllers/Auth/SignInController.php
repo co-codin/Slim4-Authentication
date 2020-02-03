@@ -40,7 +40,7 @@ class SignInController extends Controller
         ]);
 
         try {
-            if (!$user = Sentinel::authenticate($data)) {
+            if (!$user = Sentinel::authenticate($data, isset($data['persist']))) {
                 throw new \Exception('Incorrect email or password');
             }
         } catch (\Exception $e) {
