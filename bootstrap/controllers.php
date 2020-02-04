@@ -4,6 +4,7 @@ use App\Controllers\HomeController;
 use App\Controllers\Auth\SignInController;
 use App\Controllers\Auth\SignOutController;
 use App\Controllers\Dashboard\DashboardController;
+use App\Controllers\Auth\SignUpController;
 
 $container->add(HomeController::class, function () use ($container) {
     return new HomeController(
@@ -19,6 +20,14 @@ $container->add(DashboardController::class, function () use ($container) {
 
 $container->add(SignInController::class, function () use ($app, $container) {
     return new SignInController(
+        $container->get('view'),
+        $container->get('flash'),
+        $app->getRouteCollector()->getRouteParser()
+    );
+});
+
+$container->add(SignUpController::class, function () use ($app, $container) {
+    return new SignUpController(
         $container->get('view'),
         $container->get('flash'),
         $app->getRouteCollector()->getRouteParser()
