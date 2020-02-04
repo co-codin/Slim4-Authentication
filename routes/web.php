@@ -7,6 +7,7 @@ use App\Controllers\Dashboard\DashboardController;
 use App\Middleware\RedirectIfGuest;
 use App\Middleware\RedirectIfAuthenticated;
 use App\Controllers\Auth\SignUpController;
+use App\Controllers\Account\AccountController;
 
 $app->get('/', HomeController::class)->setName('home');
 
@@ -25,6 +26,9 @@ $app->group('/auth', function ($route) {
     $route->post('/signout', SignOutController::class)->setName('auth.signout');
 });
 
-$app->get('/dashboard', DashboardController::class)
-    ->setName('dashboard')
-    ->add(RedirectIfGuest::class);
+$app->group('', function ($route) {
+    $route->get('/account', AccountController::class . ':index')->setName('account');
+    $route->post('/account', AccountController::class . ':action');
+
+    $route->get('/dashboard', DashboardController::class)->setName('dashboard');
+})->add(RedirectIfGuest::class);

@@ -15,7 +15,7 @@ class FlashOldFormData
         $this->flash = $flash;
     }
 
-    public function __invoke(RequestHandlerInterface $request, ResponseInterface $response)
+    public function __invoke(RequestInterface $request, RequestHandlerInterface $handler)
     {
         $this->flash->addMessage('old', $request->getParsedBody());
 
