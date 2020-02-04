@@ -6,6 +6,7 @@ use App\Controllers\Auth\SignOutController;
 use App\Controllers\Dashboard\DashboardController;
 use App\Controllers\Auth\SignUpController;
 use App\Controllers\Account\AccountController;
+use App\Controllers\Account\AccountPasswordController;
 
 $container->add(HomeController::class, function () use ($container) {
     return new HomeController(
@@ -37,6 +38,14 @@ $container->add(SignUpController::class, function () use ($app, $container) {
 
 $container->add(AccountController::class, function () use ($app, $container) {
     return new AccountController(
+        $container->get('view'),
+        $container->get('flash'),
+        $app->getRouteCollector()->getRouteParser()
+    );
+});
+
+$container->add(AccountPasswordController::class, function () use ($app, $container) {
+    return new AccountPasswordController(
         $container->get('view'),
         $container->get('flash'),
         $app->getRouteCollector()->getRouteParser()
