@@ -34,6 +34,15 @@ class AccountPasswordController extends Controller
 
     public function action(ServerRequestInterface $request, ResponseInterface $response)
     {
+        $data = $this->validate($request, [
+            'current_password' => ['required', 'currentPassword'],
+            'password' => ['required']
+        ]);
+
+        Sentinel::getUserRepository()->update([
+            Sentinel::check(),
+            array_only($data, ['password'])
+        ]);
 
         $this->flash->addMessage('status', 'Password updated!');
 

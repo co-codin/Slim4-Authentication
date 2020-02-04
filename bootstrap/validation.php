@@ -15,3 +15,10 @@ Validator::addRule('emailIsUnique', function ($field, $value, $params, $fields) 
 
     return true;
 }, 'is already in use.');
+
+Validator::addRule('currentPassword', function ($field, $value, $params, $fields) {
+    return Sentinel::getUserRepository()->validateCredentials(
+        Sentinel::check(),
+        ['password' => $value]
+    );
+}, 'is wrong.');
