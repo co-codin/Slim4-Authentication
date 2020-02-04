@@ -33,7 +33,7 @@ class SignUpController extends Controller
     public function action(ServerRequestInterface $request, ResponseInterface $response)
     {
         $data = $this->validate($request, [
-            'email' => ['required', 'email' ],
+            'email' => ['required', 'email', 'emailIsUnique'],
             'first_name' => ['required'],
             'last_name' => ['required'],
             'password' => ['required']
