@@ -1,23 +1,28 @@
 <?php
 
+use App\Providers\CsrfServiceProvider;
+use App\Providers\ViewServiceProvider;
+use App\Providers\FlashServiceProvider;
+use App\Providers\MiddlewareServiceProvider;
+
 $container->addServiceProvider(
-    new \App\Providers\MiddlewareServiceProvider(
+    new ViewServiceProvider(
         $app->getRouteCollector()->getRouteParser()
     )
 );
 
 $container->addServiceProvider(
-    new \App\Providers\ViewServiceProvider(
-        $app->getRouteCollector()->getRouteParser()
-    )
+    new FlashServiceProvider()
 );
 
 $container->addServiceProvider(
-    new \App\Providers\CsrfServiceProvider(
+    new CsrfServiceProvider(
         $app->getResponseFactory()
     )
 );
 
 $container->addServiceProvider(
-    new \App\Providers\FlashServiceProvider()
+    new MiddlewareServiceProvider(
+        $app->getRouteCollector()->getRouteParser()
+    )
 );

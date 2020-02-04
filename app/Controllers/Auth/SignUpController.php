@@ -7,6 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Flash\Messages;
 use Slim\Interfaces\RouteParserInterface;
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use Slim\Views\Twig;
 
 class SignUpController extends Controller
@@ -29,8 +30,15 @@ class SignUpController extends Controller
         return $this->view->render($response, 'pages/auth/signup.twig');
     }
 
-    public function action()
+    public function action(ServerRequestInterface $request, ResponseInterface $response)
     {
+        $data = $this->validate($request, [
+            'email' => ['required', 'email' ],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'password' => ['required']
+        ]);
 
+        return $response;
     }
 }

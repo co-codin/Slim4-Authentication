@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use League\Container\ServiceProvider\AbstractServiceProvider;
-use Psr\Http\Message\ResponseFactoryInterface;
 use Slim\Csrf\Guard;
+use Psr\Http\Message\ResponseFactoryInterface;
+use League\Container\ServiceProvider\AbstractServiceProvider;
 
 class CsrfServiceProvider extends AbstractServiceProvider
 {
@@ -15,14 +15,24 @@ class CsrfServiceProvider extends AbstractServiceProvider
         $this->responseFactory = $responseFactory;
     }
 
+    /**
+     * Undocumented variable
+     *
+     * @var array
+     */
     protected $provides = [
         'csrf'
     ];
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function register()
     {
-        $this->getContainer()->add('csrf', function () {
-           return new Guard($this->responseFactory);
+        $this->getContainer()->share('csrf', function () {
+            return new Guard($this->responseFactory);
         });
     }
 }
