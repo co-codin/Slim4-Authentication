@@ -39,6 +39,18 @@ class SignUpController extends Controller
             'password' => ['required']
         ]);
 
+        try {
+            $user = Sentinel::register($data, true);
+
+            Sentinel::authenticate($user);
+        } catch (\Exception $e) {
+            $this->flash->addMessage('status', 'Something went wrong');
+
+            return $response->withHeader(
+                'Location', $this->routeParser->urlFor('auth.signup')
+            );
+        }
+
         return $response;
     }
 }
