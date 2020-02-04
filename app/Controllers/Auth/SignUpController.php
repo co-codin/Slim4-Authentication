@@ -40,9 +40,14 @@ class SignUpController extends Controller
         ]);
 
         try {
-            $user = Sentinel::register($data, true);
+            $user = Sentinel::register(
+                array_only($data, ['email', 'first_name', 'last_name', 'password']),
+                true
+            );
 
-            Sentinel::authenticate($user);
+            Sentinel::authenticate(
+                array_only($data, ['email', 'password'])
+            );
         } catch (\Exception $e) {
             $this->flash->addMessage('status', 'Something went wrong');
 
