@@ -58,5 +58,7 @@ class ViewServiceProvider extends AbstractServiceProvider
         $twig->getEnvironment()->addGlobal('status', $container->get('flash')->getFirstMessage('status'));
 
         $twig->getEnvironment()->addGlobal('errors', $container->get('flash')->getFirstMessage('errors'));
+
+        $twig->getEnvironment()->addGlobal('old', $container->get('flash')->getFirstMessage('old'));
     }
 }

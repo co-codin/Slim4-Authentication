@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26122823-3238-47b5-a930-ab9dfe4eae26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bootstrap/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Middleware/FlashOldFormData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Auth/SignUpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Auth/SignUpController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.twig" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/middleware.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580512472216</updated>
-      <workItem from="1580512475203" duration="28820000" />
+      <workItem from="1580512475203" duration="29338000" />
     </task>
     <servers />
   </component>
@@ -128,10 +127,10 @@
       <screen x="0" y="23" width="1680" height="941" />
     </state>
     <state x="1051" y="242" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.941@0.23.1680.941" timestamp="1580671832305" />
-    <state x="997" y="303" key="NewPhpClassDialog" timestamp="1580754598865">
+    <state x="997" y="303" key="NewPhpClassDialog" timestamp="1580843073181">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
-    <state x="997" y="303" key="NewPhpClassDialog/0.23.1680.941@0.23.1680.941" timestamp="1580754598865" />
+    <state x="997" y="303" key="NewPhpClassDialog/0.23.1680.941@0.23.1680.941" timestamp="1580843073181" />
     <state x="1204" y="410" key="NewPhpFileDialog" timestamp="1580672356356">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
@@ -144,9 +143,9 @@
       <screen x="0" y="23" width="1680" height="941" />
     </state>
     <state x="1205" y="404" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.941@0.23.1680.941" timestamp="1580574284415" />
-    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup" timestamp="1580842886444">
+    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup" timestamp="1580844269685">
       <screen x="0" y="23" width="1680" height="941" />
     </state>
-    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup/0.23.1680.941@0.23.1680.941" timestamp="1580842886444" />
+    <state x="1098" y="222" width="670" height="676" key="search.everywhere.popup/0.23.1680.941@0.23.1680.941" timestamp="1580844269685" />
   </component>
 </project>
